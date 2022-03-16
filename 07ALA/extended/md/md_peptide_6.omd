@@ -1,0 +1,2563 @@
+MD++
+========
+version    :     1.4.1
+build date :     Mon Mar 18 12:25:43 -03 2019
+
+Debugging is disabled.
+
+OpenMP code enabled
+	using 2 threads.
+	This can be adjusted by setting the
+ 	OMP_NUM_THREADS environment variable.
+
+
+Gruppe fuer Informatikgestuetzte Chemie
+Professor W. F. van Gunsteren
+ETH Swiss Federal Institute of Technology
+Zurich, Switzerland
+
+Bugreports to http://www.gromos.net
+
+Running on don-elias (Linux 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64).
+
+TITLE
+	MD++
+
+	output file
+END
+INPUT
+	Automatically generated input file
+	imunoz Thu Sep 23 16:31:26 2021
+END
+TOPOLOGY
+MAKE_TOP topology, using:
+54a7.mtb
+54a7.ifp
+Force-field code: 54A7
+
+	unknown topology type (atomistic / coarse-grained)
+	using atomistic parameters
+	RESNAME
+	     ALA     ALA     ALA     ALA     ALA     ALA     ALA
+	END
+	ATOMTYPENAME
+		54 atom types
+	END
+	SOLUTEATOM
+		number of atoms : 45
+	END
+	CGSOLUTE
+	LJEXCEPTIONS
+		0 Lennard-Jones exceptions.
+	END
+	BOND
+		9 bonds from BONDH block added to CONSTRAINT
+		35 bonds from BOND block added to CONSTRAINT
+	END
+	BONDDP
+	END
+	BONDANGLE
+		bondangles containing hydrogens : 16
+		bondangles not containing hydrogens : 48
+	END
+	IMPDIHEDRAL
+		improper dihedrals not containing hydrogens : 14
+		improper dihedrals containing hydrogens : 6
+	END
+	DIHEDRAL
+		dihedrals not containing hydrogens : 32
+		dihedrals containing hydrogens : 2
+	END
+	CROSSDIHEDRAL
+		crossdihedrals not containing hydrogens : 0
+		crossdihedrals containing hydrogens : 0
+	END
+	SOLVENT
+		atoms : 3
+		constraints : 3
+		adding 2502 solvents.
+	END
+	SOLUTE [sub]molecules: 1
+	SOLUTE temperature groups: 1
+	SOLUTE pressure groups: 1
+END
+FORCEFIELD
+	bond angle (cosine) interaction
+	improper dihedral interaction
+	dihedral interaction
+	crossdihedral interaction
+	nonbonded force     van-der-Waals                 Coulomb-reaction-field        
+	Pairlist Algorithm  Grid Pairlist Algorithm       
+	boundary            rectangular                   
+	virial              molecular                     
+	cutoff              chargegroup                   
+	shortrange cutoff      : 0.8
+	longrange cutoff       : 1.4
+	pairlist creation every 5 steps
+
+	REACTION FIELD PARAMETERS
+	reactionfield cutoff   : 1.4
+	epsilon                : 1
+	reactionfield epsilon  : 61
+	kappa                  : 0
+	Position restraints
+	perturbation        off                           
+END
+PRESSURE SCALING
+      COUPLE       SCALE        COMP         TAU      VIRIAL
+       scale         iso     0.00046     0.50000   molecular
+     SEMIANISOTROPIC COUPLINGS(X, Y, Z)
+     1 (ignored)     1 (ignored)     1 (ignored)
+     REFERENCE PRESSURE
+     0.06102     0.00000     0.00000
+     0.00000     0.06102     0.00000
+     0.00000     0.00000     0.06102
+END
+POSITION RESTRAINTS
+	Position restraints ON
+		restraining to the positions in the positions restraints file.
+END
+CONFIGURATION
+	reading POSITION...
+	reading VELOCITY...
+	reading GENBOX...
+	PBC            = rectangular
+	total mass     = 45590.09990
+	volume         = 78.09513
+	density        = 583.77645
+END
+
+CENTRE OF MASS MOTION
+	removing centre of mass motion every 1000 steps
+	removing centre of mass translation
+
+END
+LATTICESHIFTS
+    keeping track of lattice shifts.
+    setting initial shifts to zero.
+END
+NONBONDED INTERACTION
+	extended grid pairlist algorithm
+		cells                     11        11        11
+		extenced cells            19        19        19
+		cell size             0.3886    0.3886    0.3886
+		particles / cell        1.8956
+		particles / layer     229.3636
+		cells in mask              211
+		pairs               3182764.5000
+		pairs (grid)        1009110.9083
+		pairs (cutoff)      468439.2233
+		occupied                  1267
+		particle / occ cell     1.9913
+	created 2 sets
+
+	estimated pairlist size (per atom) : 269
+	using standard solvent loops (user request)
+END
+Molecular virial (calculated from atomic virial)
+Position restraint interaction
+INTEGRATION
+	Leap frog velocity
+	Weak-Coupling temperature coupling
+	Leap frog position
+END
+SHAKE
+	solute	ON
+		tolerance = 0.0001
+	solvent	ON
+		tolerance = 0.0001
+END
+MULTIBATHCOUPLING
+   LAST-ATOM    LAST-MOL    COM-BATH     IR-BATH
+          45           1           1           1
+        7551        2503           2           2
+END
+DEGREES OF FREEDOM
+      BATH   TEMP0     TAU       DOF   MOL-DOF    IR-DOF     SOLUC     SOLVC
+         0  298.15    0.10     90.98      3.00     88.00     44.00      0.00
+         1  298.15    0.10  15009.02   7506.00   7506.00      0.00   7506.00
+    --------------------------------------------------------------------------
+     Total  298.15    0.10  15100.00   7509.00   7594.00     44.00   7506.00
+END
+INITIAL TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   3.4383e+02   1.0988e-01   3.4372e+02    909.04      8.81    939.54   0.0000000
+         1   1.8764e+04   9.3236e+03   9.4407e+03    300.73    298.80    302.55   0.0000000
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9108e+04   9.3237e+03   9.7844e+03    304.40    298.68    309.93   0.0000000
+END
+
+MESSAGES FROM INITIALISATION
+  WARNING create_special : Position restraint forces not added to molecular virial
+  WARNING in_configuration : LATTICESHIFTS block provided but shifts reset to zero.
+  WARNING In_Configuration : block LATTICESHIFTS not read in!
+  WARNING In_Configuration : block REFPOSITION not read in!
+   NOTICE read input : parameter read from /home/imunoz/NPT.Lambda/07ALA/extended/md/md_peptide_6.imd
+        ,------------------------------------------------.
+        | 	Automatically generated input file
+        | 	imunoz Thu Sep 23 16:31:26 2021
+        `------------------------------------------------'
+   NOTICE In_Topology::bondtype : Reading bond types from BONDSTRETCHTYPE block
+   NOTICE In_Topology::angletype : Reading angle types from BONDANGLEBENDTYPE block
+   NOTICE In_Topology::dihedraltype : Reading angle types from TORSDIHEDRALTYPE block
+   NOTICE read input : topology read from /home/imunoz/NPT.Lambda/07ALA/extended/md/../../topo/7ALA_noC_54a7.top
+        ,------------------------------------------------.
+        | MAKE_TOP topology, using:
+        | 54a7.mtb
+        | 54a7.ifp
+        | Force-field code: 54A7
+        `------------------------------------------------'
+   NOTICE read special : position restraints specification read from /home/imunoz/NPT.Lambda/07ALA/extended/md/../box/sim_box_peptide.por
+        ,------------------------------------------------.
+        | solute atoms to be positionally restrained
+        `------------------------------------------------'
+   NOTICE read special : position restraints specification read from /home/imunoz/NPT.Lambda/07ALA/extended/md/../box/sim_box_peptide.rpr
+        ,------------------------------------------------.
+        | reference positions for restraining solute atoms
+        `------------------------------------------------'
+   NOTICE read input : configuration read from /home/imunoz/NPT.Lambda/07ALA/extended/md/md_peptide_5.cnf
+        ,------------------------------------------------.
+        | 	MD++
+        | 	Automatically generated input file
+        | 	imunoz Thu Sep 23 16:31:26 2021
+        | 	final configuration
+        `------------------------------------------------'
+
+enter the next level of molecular dynamics simulations
+
+==================================================
+ MAIN MD LOOP
+==================================================
+
+
+--------------------------------------------------------------------------------
+TIMESTEP
+              0   50.000000000
+END
+ENERGIES
+E_Total                :  -8.4084e+04
+E_Kinetic              :            1.9507e+04
+E_Potential+Special    :           -1.0359e+05
+E_Potential            :           -1.0373e+05
+E_Covalent             :                     6.4185e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              4.1078e+01
+E_Improper             :                              1.4628e+00
+E_Dihedral             :                              2.1644e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0379e+05
+E_Vdw                  :                              1.7525e+04
+E_El (RF)              :                             -1.2132e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            1.3916e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     1.3916e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  4.1078e+01  0.0000e+00
+         E_impropers  1.4628e+00  0.0000e+00
+         E_dihedrals  2.1644e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.7817e+01 -1.9902e+02
+             46-7551              1.7772e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2132e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  1.3916e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   7.3310e+02   1.9912e-01   7.3290e+02   1938.25     15.97   2003.38   0.9932571
+         1   1.8774e+04   9.3247e+03   9.4494e+03    300.89    298.83    302.83   0.9999142
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9507e+04   9.3249e+03   1.0182e+04    310.75    298.72    322.53   0.9998741
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.09882e+03   -3.85621e+01   -2.06090e+01
+	   -3.85621e+01    3.15615e+03   -1.16722e+02
+	   -2.06090e+01   -1.16722e+02    3.06875e+03
+	
+	virial
+	    3.37015e+03   -8.80030e+02    9.45234e+01
+	   -1.57955e+03    2.42344e+03   -1.70991e+02
+	    3.76253e+02    3.99821e+02    2.64099e+03
+	
+	pressure tensor
+	   -6.94875e+00    2.15498e+01   -2.94852e+00
+	    3.94645e+01    1.87646e+01    1.38982e+00
+	   -1.01636e+01   -1.32286e+01    1.09548e+01
+	
+	pressure:     7.59019e+00
+	volume:       7.80951e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+            250   50.500000000
+END
+ENERGIES
+E_Total                :  -8.3025e+04
+E_Kinetic              :            1.9306e+04
+E_Potential+Special    :           -1.0233e+05
+E_Potential            :           -1.0329e+05
+E_Covalent             :                     2.8709e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              2.6391e+02
+E_Improper             :                              1.7580e+00
+E_Dihedral             :                              2.1424e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0358e+05
+E_Vdw                  :                              1.7110e+04
+E_El (RF)              :                             -1.2069e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            9.6149e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     9.6149e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  2.6391e+02  0.0000e+00
+         E_impropers  1.7580e+00  0.0000e+00
+         E_dihedrals  2.1424e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.7452e+01 -1.8223e+02
+             46-7551              1.7340e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2069e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  9.6149e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   5.9741e+02   1.0681e-01   5.9731e+02   1579.50      8.56   1632.73   1.0239679
+         1   1.8709e+04   9.0734e+03   9.6356e+03    299.84    290.78    308.79   0.9999343
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9306e+04   9.0735e+03   1.0233e+04    307.56    290.67    324.13   1.0000791
+END
+PRESSURE
+	molecular kinetic energy:
+	    2.94815e+03    1.24264e+01    1.32862e+02
+	    1.24264e+01    3.16194e+03    8.11443e+01
+	    1.32862e+02    8.11443e+01    2.96968e+03
+	
+	virial
+	    3.52217e+03   -4.60443e+02    2.24262e+02
+	   -3.49628e+02    2.81849e+03    8.46595e+02
+	    3.35531e+02    8.52238e+02    3.12428e+03
+	
+	pressure tensor
+	   -1.46858e+01    1.20979e+01   -2.33838e+00
+	    9.26281e+00    8.78691e+00   -1.95833e+01
+	   -5.18508e+00   -1.97277e+01   -3.95526e+00
+	
+	pressure:    -3.28471e+00
+	volume:       7.81739e+01
+
+END
+MD:         10% done...
+MD: spent 0:0:13
+MD: ETA   0:2:3
+
+--------------------------------------------------------------------------------
+TIMESTEP
+            500   51.000000000
+END
+ENERGIES
+E_Total                :  -8.3746e+04
+E_Kinetic              :            1.9355e+04
+E_Potential+Special    :           -1.0310e+05
+E_Potential            :           -1.0345e+05
+E_Covalent             :                     1.2348e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.0066e+02
+E_Improper             :                              1.4211e+00
+E_Dihedral             :                              2.1401e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0357e+05
+E_Vdw                  :                              1.7323e+04
+E_El (RF)              :                             -1.2089e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            3.4554e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     3.4554e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.0066e+02  0.0000e+00
+         E_impropers  1.4211e+00  0.0000e+00
+         E_dihedrals  2.1401e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8171e+01 -2.0472e+02
+             46-7551              1.7576e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2089e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  3.4554e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   5.2813e+02   1.5146e-01   5.2798e+02   1396.32     12.14   1443.22   0.9911010
+         1   1.8827e+04   9.1626e+03   9.6645e+03    301.74    293.64    309.72   0.9998605
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9355e+04   9.1628e+03   1.0192e+04    308.33    293.52    322.85   0.9998077
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.11681e+03   -2.13778e+01    1.06007e+02
+	   -2.13778e+01    3.11329e+03   -4.47729e+01
+	    1.06007e+02   -4.47729e+01    2.95365e+03
+	
+	virial
+	    3.08996e+03   -4.77880e+01   -2.07823e+02
+	    6.62783e+02    2.76090e+03   -1.63643e+02
+	    2.79487e+02   -2.24861e+02    2.48799e+03
+	
+	pressure tensor
+	    6.88144e-01    6.77118e-01    8.04610e+00
+	   -1.75408e+01    9.03486e+00    3.04764e+00
+	   -4.44776e+00    4.61717e+00    1.19387e+01
+	
+	pressure:     7.22056e+00
+	volume:       7.80079e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+            750   51.500000000
+END
+ENERGIES
+E_Total                :  -8.4603e+04
+E_Kinetic              :            1.9443e+04
+E_Potential+Special    :           -1.0405e+05
+E_Potential            :           -1.0409e+05
+E_Covalent             :                     3.6370e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.3313e+01
+E_Improper             :                              1.6370e+00
+E_Dihedral             :                              2.1420e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0412e+05
+E_Vdw                  :                              1.7564e+04
+E_El (RF)              :                             -1.2169e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            4.0187e+01
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     4.0187e+01
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.3313e+01  0.0000e+00
+         E_impropers  1.6370e+00  0.0000e+00
+         E_dihedrals  2.1420e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8168e+01 -1.9710e+02
+             46-7551              1.7809e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2169e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  4.0187e+01  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   5.4427e+02   4.7733e-01   5.4379e+02   1438.98     38.27   1486.44   0.9925604
+         1   1.8899e+04   9.2751e+03   9.6235e+03    302.88    297.24    308.41   0.9998578
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9443e+04   9.2756e+03   1.0167e+04    309.73    297.14    322.06   0.9998138
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.02729e+03    1.34037e+01    7.04569e+00
+	    1.34037e+01    3.12012e+03    1.51758e+01
+	    7.04569e+00    1.51758e+01    3.13223e+03
+	
+	virial
+	    2.53491e+03   -1.50534e+03    3.74768e+02
+	   -8.35252e+02    4.24367e+03   -2.49970e+02
+	    3.17244e+02    2.06125e+02    2.43997e+03
+	
+	pressure tensor
+	    1.26661e+01    3.90681e+01   -9.45931e+00
+	    2.18309e+01   -2.89022e+01    6.82062e+00
+	   -7.97955e+00   -4.91198e+00    1.78076e+01
+	
+	pressure:     5.23832e-01
+	volume:       7.77483e+01
+
+END
+MD:         20% done...
+MD: spent 0:0:26
+MD: ETA   0:1:47
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           1000   52.000000000
+END
+ENERGIES
+E_Total                :  -8.4078e+04
+E_Kinetic              :            1.9333e+04
+E_Potential+Special    :           -1.0341e+05
+E_Potential            :           -1.0383e+05
+E_Covalent             :                     1.4316e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.2029e+02
+E_Improper             :                              1.6127e+00
+E_Dihedral             :                              2.1255e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0398e+05
+E_Vdw                  :                              1.7497e+04
+E_El (RF)              :                             -1.2147e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            4.2132e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     4.2132e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.2029e+02  0.0000e+00
+         E_impropers  1.6127e+00  0.0000e+00
+         E_dihedrals  2.1255e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8237e+01 -1.9986e+02
+             46-7551              1.7745e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2147e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  4.2132e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   4.0929e+02   2.1612e-01   4.0907e+02   1082.12     17.33   1118.20   1.0107761
+         1   1.8924e+04   9.0978e+03   9.8263e+03    303.29    291.56    314.90   0.9998117
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9333e+04   9.0980e+03   1.0235e+04    307.98    291.45    324.21   0.9998777
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.02520e+03   -6.36903e+01    6.62560e+01
+	   -6.36903e+01    3.10554e+03   -7.53022e+01
+	    6.62560e+01   -7.53022e+01    2.98174e+03
+	
+	virial
+	    3.58674e+03    5.97397e+01    2.89712e+02
+	   -7.83928e+02    2.58368e+03   -6.24803e+02
+	    2.55510e+02    1.85757e+02    2.57375e+03
+	
+	pressure tensor
+	   -1.44272e+01   -3.17118e+00   -5.74108e+00
+	    1.85045e+01    1.34079e+01    1.41179e+01
+	   -4.86236e+00   -6.70719e+00    1.04821e+01
+	
+	pressure:     3.15429e+00
+	volume:       7.78447e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           1250   52.500000000
+END
+ENERGIES
+E_Total                :  -8.3627e+04
+E_Kinetic              :            1.8873e+04
+E_Potential+Special    :           -1.0250e+05
+E_Potential            :           -1.0320e+05
+E_Covalent             :                     2.1710e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.9420e+02
+E_Improper             :                              1.6377e+00
+E_Dihedral             :                              2.1260e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0341e+05
+E_Vdw                  :                              1.7256e+04
+E_El (RF)              :                             -1.2067e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            6.9521e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     6.9521e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.9420e+02  0.0000e+00
+         E_impropers  1.6377e+00  0.0000e+00
+         E_dihedrals  2.1260e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.7571e+01 -1.9807e+02
+             46-7551              1.7501e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2067e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  6.9521e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   3.9935e+02   7.7318e-02   3.9927e+02   1055.84      6.20   1091.40   1.0084059
+         1   1.8473e+04   8.9336e+03   9.5396e+03    296.07    286.30    305.72   1.0000847
+    ---------------------------------------------------------------------------------------
+     T_avg   1.8873e+04   8.9337e+03   9.9389e+03    300.64    286.19    314.82   1.0001348
+END
+PRESSURE
+	molecular kinetic energy:
+	    2.85994e+03    7.19376e+01    3.49826e+01
+	    7.19376e+01    2.97529e+03   -2.88244e+01
+	    3.49826e+01   -2.88244e+01    3.10260e+03
+	
+	virial
+	    3.77138e+03    5.92428e+02    6.70286e+02
+	    1.17249e+03    2.69392e+03   -4.13454e+02
+	    6.65276e+02    9.72243e+01    2.19504e+03
+	
+	pressure tensor
+	   -2.33699e+01   -1.33457e+01   -1.62896e+01
+	   -2.82188e+01    7.21448e+00    9.86214e+00
+	   -1.61611e+01   -3.23197e+00    2.32703e+01
+	
+	pressure:     2.37163e+00
+	volume:       7.80012e+01
+
+END
+MD:         30% done...
+MD: spent 0:0:40
+MD: ETA   0:1:33
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           1500   53.000000000
+END
+ENERGIES
+E_Total                :  -8.4015e+04
+E_Kinetic              :            1.9266e+04
+E_Potential+Special    :           -1.0328e+05
+E_Potential            :           -1.0374e+05
+E_Covalent             :                     1.5276e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.2981e+02
+E_Improper             :                              1.5604e+00
+E_Dihedral             :                              2.1399e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0389e+05
+E_Vdw                  :                              1.7398e+04
+E_El (RF)              :                             -1.2129e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            4.5490e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     4.5490e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.2981e+02  0.0000e+00
+         E_impropers  1.5604e+00  0.0000e+00
+         E_dihedrals  2.1399e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8542e+01 -1.9862e+02
+             46-7551              1.7646e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2129e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  4.5490e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   2.0013e+02   1.6039e-02   2.0011e+02    529.11      1.29    547.00   0.9941141
+         1   1.9066e+04   9.3353e+03   9.7303e+03    305.56    299.17    311.83   0.9997528
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9266e+04   9.3353e+03   9.9304e+03    306.91    299.05    314.55   0.9997188
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.11616e+03   -6.38073e+01    4.84786e+01
+	   -6.38073e+01    3.05443e+03   -1.01760e+02
+	    4.84786e+01   -1.01760e+02    3.16077e+03
+	
+	virial
+	    2.93253e+03    1.03678e+02    3.43135e+02
+	    1.38446e+02    3.92010e+03   -5.41379e+02
+	    8.42926e+01    1.72102e+02    2.37365e+03
+	
+	pressure tensor
+	    4.70761e+00   -4.29372e+00   -7.55389e+00
+	   -5.18503e+00   -2.21927e+01    1.12702e+01
+	   -9.18139e-01   -7.02081e+00    2.01788e+01
+	
+	pressure:     8.97921e-01
+	volume:       7.80143e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           1750   53.500000000
+END
+ENERGIES
+E_Total                :  -8.4443e+04
+E_Kinetic              :            1.9561e+04
+E_Potential+Special    :           -1.0400e+05
+E_Potential            :           -1.0432e+05
+E_Covalent             :                     1.1405e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              9.1309e+01
+E_Improper             :                              1.3953e+00
+E_Dihedral             :                              2.1347e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0443e+05
+E_Vdw                  :                              1.6901e+04
+E_El (RF)              :                             -1.2133e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            3.1265e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     3.1265e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  9.1309e+01  0.0000e+00
+         E_impropers  1.3953e+00  0.0000e+00
+         E_dihedrals  2.1347e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8288e+01 -2.0883e+02
+             46-7551              1.7159e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2133e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  3.1265e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   2.5972e+02   1.5313e-01   2.5957e+02    686.68     12.28    709.53   0.9925127
+         1   1.9301e+04   9.3784e+03   9.9227e+03    309.33    300.55    318.00   0.9996492
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9561e+04   9.3785e+03   1.0182e+04    311.61    300.44    322.53   0.9996062
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.15978e+03    3.68194e+01   -3.14173e+01
+	    3.68194e+01    3.10701e+03    2.14774e+01
+	   -3.14173e+01    2.14774e+01    3.12077e+03
+	
+	virial
+	    4.15913e+03    8.43589e+02    7.42179e+02
+	   -4.21382e+01    3.73108e+03    3.64955e+00
+	    7.45156e+02    3.71140e+02    5.03541e+03
+	
+	pressure tensor
+	   -2.56407e+01   -2.06994e+01   -1.98483e+01
+	    2.02583e+00   -1.60119e+01    4.57412e-01
+	   -1.99247e+01   -8.97136e+00   -4.91241e+01
+	
+	pressure:    -3.02589e+01
+	volume:       7.79509e+01
+
+END
+MD:         40% done...
+MD: spent 0:0:53
+MD: ETA   0:1:20
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           2000   54.000000000
+END
+ENERGIES
+E_Total                :  -8.4545e+04
+E_Kinetic              :            1.9013e+04
+E_Potential+Special    :           -1.0356e+05
+E_Potential            :           -1.0395e+05
+E_Covalent             :                     1.3517e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.1231e+02
+E_Improper             :                              1.4109e+00
+E_Dihedral             :                              2.1442e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0408e+05
+E_Vdw                  :                              1.7538e+04
+E_El (RF)              :                             -1.2162e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            3.8696e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     3.8696e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.1231e+02  0.0000e+00
+         E_impropers  1.4109e+00  0.0000e+00
+         E_dihedrals  2.1442e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8593e+01 -2.0089e+02
+             46-7551              1.7788e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2162e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  3.8696e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   1.8491e+02   5.6835e-02   1.8486e+02    488.89      4.56    505.30   0.9937524
+         1   1.8828e+04   9.0162e+03   9.8118e+03    301.75    288.94    314.44   0.9998781
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9013e+04   9.0163e+03   9.9966e+03    302.88    288.83    316.65   0.9998412
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.04411e+03   -1.27937e+02    2.10960e+01
+	   -1.27937e+02    2.95401e+03   -5.74968e+01
+	    2.10960e+01   -5.74968e+01    3.03376e+03
+	
+	virial
+	    3.81502e+03    6.87945e+02   -2.72880e+02
+	   -1.19464e+02    3.41367e+03    1.01468e+01
+	   -9.25126e+02    4.92741e+02    1.30143e+03
+	
+	pressure tensor
+	   -1.98317e+01   -2.09886e+01    7.56254e+00
+	   -2.17985e-01   -1.18249e+01   -1.74013e+00
+	    2.43416e+01   -1.41549e+01    4.45641e+01
+	
+	pressure:     4.30252e+00
+	volume:       7.77454e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           2250   54.500000000
+END
+ENERGIES
+E_Total                :  -8.4131e+04
+E_Kinetic              :            1.9244e+04
+E_Potential+Special    :           -1.0337e+05
+E_Potential            :           -1.0375e+05
+E_Covalent             :                     1.3235e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.0964e+02
+E_Improper             :                              1.3542e+00
+E_Dihedral             :                              2.1365e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0388e+05
+E_Vdw                  :                              1.7273e+04
+E_El (RF)              :                             -1.2116e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            3.7758e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     3.7758e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.0964e+02  0.0000e+00
+         E_impropers  1.3542e+00  0.0000e+00
+         E_dihedrals  2.1365e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8013e+01 -1.9793e+02
+             46-7551              1.7519e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2116e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  3.7758e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   3.5393e+02   1.6372e-01   3.5377e+02    935.75     13.13    967.01   0.9916104
+         1   1.8890e+04   9.1940e+03   9.6958e+03    302.74    294.64    310.72   0.9998608
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9244e+04   9.1941e+03   1.0050e+04    306.56    294.53    318.33   0.9998111
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.03833e+03   -1.16749e+02   -1.26129e+02
+	   -1.16749e+02    2.99723e+03    2.39718e+01
+	   -1.26129e+02    2.39718e+01    3.17169e+03
+	
+	virial
+	    3.27095e+03   -6.07914e+02   -1.51487e+02
+	   -3.52995e+02    2.04393e+03    3.87733e+02
+	   -8.17868e+01    5.52809e+02    3.82188e+03
+	
+	pressure tensor
+	   -5.99597e+00    1.26602e+01    6.53638e-01
+	    6.08943e+00    2.45721e+01   -9.37624e+00
+	   -1.14295e+00   -1.36312e+01   -1.67593e+01
+	
+	pressure:     6.05589e-01
+	volume:       7.75921e+01
+
+END
+MD:         50% done...
+MD: spent 0:1:6
+MD: ETA   0:1:6
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           2500   55.000000000
+END
+ENERGIES
+E_Total                :  -8.4439e+04
+E_Kinetic              :            1.9155e+04
+E_Potential+Special    :           -1.0359e+05
+E_Potential            :           -1.0364e+05
+E_Covalent             :                     3.9569e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.6806e+01
+E_Improper             :                              1.4386e+00
+E_Dihedral             :                              2.1325e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0368e+05
+E_Vdw                  :                              1.7695e+04
+E_El (RF)              :                             -1.2138e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            4.7407e+01
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     4.7407e+01
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.6806e+01  0.0000e+00
+         E_impropers  1.4386e+00  0.0000e+00
+         E_dihedrals  2.1325e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8353e+01 -2.0784e+02
+             46-7551              1.7951e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2138e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  4.7407e+01  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   3.8223e+02   1.2526e-01   3.8211e+02   1010.59     10.04   1044.49   0.9923733
+         1   1.8773e+04   9.0037e+03   9.7692e+03    300.87    288.54    313.08   0.9999160
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9155e+04   9.0038e+03   1.0151e+04    305.15    288.43    321.55   0.9998706
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.08671e+03    6.35415e+01   -1.30614e+02
+	    6.35415e+01    3.04111e+03   -8.85306e+01
+	   -1.30614e+02   -8.85306e+01    2.87846e+03
+	
+	virial
+	    2.35027e+03    4.13862e+00   -1.07153e+03
+	    4.41509e+02    2.43044e+03    4.63672e+02
+	   -6.18645e+02    2.26803e+02    1.80014e+03
+	
+	pressure tensor
+	    1.89905e+01    1.53181e+00    2.42631e+01
+	   -9.74655e+00    1.57474e+01   -1.42395e+01
+	    1.25847e+01   -8.13143e+00    2.78066e+01
+	
+	pressure:     2.08482e+01
+	volume:       7.75592e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           2750   55.500000000
+END
+ENERGIES
+E_Total                :  -8.4557e+04
+E_Kinetic              :            1.9489e+04
+E_Potential+Special    :           -1.0405e+05
+E_Potential            :           -1.0408e+05
+E_Covalent             :                     3.5867e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.3087e+01
+E_Improper             :                              1.3730e+00
+E_Dihedral             :                              2.1407e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0412e+05
+E_Vdw                  :                              1.7278e+04
+E_El (RF)              :                             -1.2139e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            3.3213e+01
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     3.3213e+01
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.3087e+01  0.0000e+00
+         E_impropers  1.3730e+00  0.0000e+00
+         E_dihedrals  2.1407e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8518e+01 -2.1637e+02
+             46-7551              1.7543e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2139e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  3.3213e+01  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   3.7778e+02   1.5410e-01   3.7762e+02    998.80     12.36   1032.23   0.9927711
+         1   1.9111e+04   9.3316e+03   9.7797e+03    306.29    299.05    313.41   0.9997493
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9489e+04   9.3317e+03   1.0157e+04    310.47    298.94    321.74   0.9997073
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.18204e+03    1.74276e+01   -3.77559e+01
+	    1.74276e+01    3.00405e+03    2.94656e+01
+	   -3.77559e+01    2.94656e+01    3.16435e+03
+	
+	virial
+	    2.26365e+03    2.70719e+01    3.44760e+02
+	   -4.27114e+02    3.75715e+03   -1.23862e+02
+	    9.28625e+02   -4.16288e+02    3.47775e+03
+	
+	pressure tensor
+	    2.36664e+01   -2.48526e-01   -9.85720e+00
+	    1.14556e+01   -1.94068e+01    3.95117e+00
+	   -2.49030e+01    1.14868e+01   -8.07614e+00
+	
+	pressure:    -1.27217e+00
+	volume:       7.76115e+01
+
+END
+MD:         60% done...
+MD: spent 0:1:20
+MD: ETA   0:0:53
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           3000   56.000000000
+END
+ENERGIES
+E_Total                :  -8.4623e+04
+E_Kinetic              :            1.9276e+04
+E_Potential+Special    :           -1.0390e+05
+E_Potential            :           -1.0394e+05
+E_Covalent             :                     3.7023e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.4199e+01
+E_Improper             :                              1.4371e+00
+E_Dihedral             :                              2.1387e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0397e+05
+E_Vdw                  :                              1.7752e+04
+E_El (RF)              :                             -1.2172e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            3.5725e+01
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     3.5725e+01
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.4199e+01  0.0000e+00
+         E_impropers  1.4371e+00  0.0000e+00
+         E_dihedrals  2.1387e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8665e+01 -2.0231e+02
+             46-7551              1.8003e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2172e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  3.5725e+01  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   2.8064e+02   7.9602e-02   2.8056e+02    741.97      6.38    766.89   0.9935277
+         1   1.8996e+04   8.9923e+03   1.0004e+04    304.44    288.18    320.58   0.9998097
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9276e+04   8.9924e+03   1.0284e+04    307.08    288.07    325.76   0.9997719
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.06248e+03   -6.89747e+01    7.88244e+01
+	   -6.89747e+01    2.89122e+03    9.88711e+00
+	    7.88244e+01    9.88711e+00    3.05314e+03
+	
+	virial
+	    2.90519e+03   -1.34446e+01   -1.67537e+03
+	   -4.58369e+02    1.88391e+03   -5.62770e+02
+	   -8.03103e+02   -2.97528e+02    2.84491e+03
+	
+	pressure tensor
+	    4.05076e+00   -1.43005e+00    4.51753e+01
+	    1.00279e+01    2.59412e+01    1.47475e+01
+	    2.27120e+01    7.91677e+00    5.36231e+00
+	
+	pressure:     1.17847e+01
+	volume:       7.76618e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           3250   56.500000000
+END
+ENERGIES
+E_Total                :  -8.4036e+04
+E_Kinetic              :            1.9523e+04
+E_Potential+Special    :           -1.0356e+05
+E_Potential            :           -1.0391e+05
+E_Covalent             :                     1.2317e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.0049e+02
+E_Improper             :                              1.4250e+00
+E_Dihedral             :                              2.1257e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0403e+05
+E_Vdw                  :                              1.7521e+04
+E_El (RF)              :                             -1.2155e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            3.4723e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     3.4723e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.0049e+02  0.0000e+00
+         E_impropers  1.4250e+00  0.0000e+00
+         E_dihedrals  2.1257e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8102e+01 -2.1465e+02
+             46-7551              1.7784e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2155e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  3.4723e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   4.8671e+02   1.4504e-01   4.8656e+02   1286.80     11.63   1330.01   0.9912170
+         1   1.9036e+04   9.1557e+03   9.8801e+03    305.08    293.42    316.63   0.9997629
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9523e+04   9.1559e+03   1.0367e+04    311.00    293.30    328.37   0.9997114
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.12793e+03    6.43188e+01   -5.49390e+01
+	    6.43188e+01    3.09552e+03   -4.65176e+01
+	   -5.49390e+01   -4.65176e+01    2.95028e+03
+	
+	virial
+	    1.96068e+03    1.03617e+03   -4.11997e+02
+	    1.22305e+03    3.16248e+03    5.01485e+00
+	   -7.97692e+02    9.73916e+01    3.13875e+03
+	
+	pressure tensor
+	    3.00915e+01   -2.50543e+01    9.20495e+00
+	   -2.98721e+01   -1.72642e+00   -1.32851e+00
+	    1.91482e+01   -3.70998e+00   -4.85873e+00
+	
+	pressure:     7.83546e+00
+	volume:       7.75796e+01
+
+END
+MD:         70% done...
+MD: spent 0:1:33
+MD: ETA   0:0:40
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           3500   57.000000000
+END
+ENERGIES
+E_Total                :  -8.4721e+04
+E_Kinetic              :            1.9409e+04
+E_Potential+Special    :           -1.0413e+05
+E_Potential            :           -1.0421e+05
+E_Covalent             :                     4.9041e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              2.6221e+01
+E_Improper             :                              1.4174e+00
+E_Dihedral             :                              2.1403e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0426e+05
+E_Vdw                  :                              1.7415e+04
+E_El (RF)              :                             -1.2167e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            7.8345e+01
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     7.8345e+01
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  2.6221e+01  0.0000e+00
+         E_impropers  1.4174e+00  0.0000e+00
+         E_dihedrals  2.1403e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8705e+01 -2.1282e+02
+             46-7551              1.7676e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2167e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  7.8345e+01  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   2.2480e+02   3.9526e-02   2.2476e+02    594.34      3.17    614.37   0.9936098
+         1   1.9185e+04   9.3591e+03   9.8255e+03    307.47    299.93    314.88   0.9997140
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9409e+04   9.3591e+03   1.0050e+04    309.20    299.81    318.35   0.9996772
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.15612e+03    8.22633e+01    4.48877e+01
+	    8.22633e+01    3.06576e+03   -1.34674e+01
+	    4.48877e+01   -1.34674e+01    3.12838e+03
+	
+	virial
+	    3.17133e+03    1.42982e+02   -5.54138e+02
+	   -1.45253e+02    3.66374e+03   -9.30834e+02
+	    2.00441e+02   -5.69443e+02    2.12329e+03
+	
+	pressure tensor
+	   -3.92032e-01   -1.56541e+00    1.54437e+01
+	    5.86567e+00   -1.54167e+01    2.36509e+01
+	   -4.01037e+00    1.43338e+01    2.59125e+01
+	
+	pressure:     3.36792e+00
+	volume:       7.75755e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           3750   57.500000000
+END
+ENERGIES
+E_Total                :  -8.4495e+04
+E_Kinetic              :            1.8938e+04
+E_Potential+Special    :           -1.0343e+05
+E_Potential            :           -1.0363e+05
+E_Covalent             :                     8.3018e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              6.0180e+01
+E_Improper             :                              1.4216e+00
+E_Dihedral             :                              2.1417e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0371e+05
+E_Vdw                  :                              1.7042e+04
+E_El (RF)              :                             -1.2075e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            1.9594e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     1.9594e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  6.0180e+01  0.0000e+00
+         E_impropers  1.4216e+00  0.0000e+00
+         E_dihedrals  2.1417e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8878e+01 -2.1517e+02
+             46-7551              1.7306e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2075e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  1.9594e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   1.6718e+02   8.8259e-02   1.6709e+02    442.01      7.08    456.74   0.9937863
+         1   1.8771e+04   9.0663e+03   9.7050e+03    300.84    290.55    311.02   0.9999029
+    ---------------------------------------------------------------------------------------
+     T_avg   1.8938e+04   9.0664e+03   9.8721e+03    301.69    290.44    312.71   0.9998660
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.10230e+03    3.35013e+01   -8.86437e+01
+	    3.35013e+01    3.02641e+03    4.26038e+01
+	   -8.86437e+01    4.26038e+01    2.94486e+03
+	
+	virial
+	    3.37642e+03   -1.23602e+02   -3.31473e+02
+	   -2.39226e+02    3.81023e+03    1.59011e+02
+	   -8.24363e+01    9.03598e+02    2.96078e+03
+	
+	pressure tensor
+	   -7.06443e+00    4.04879e+00    6.25810e+00
+	    7.02861e+00   -2.02002e+01   -3.00001e+00
+	   -1.59972e-01   -2.21892e+01   -4.10337e-01
+	
+	pressure:    -9.22499e+00
+	volume:       7.76049e+01
+
+END
+MD:         80% done...
+MD: spent 0:1:46
+MD: ETA   0:0:26
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           4000   58.000000000
+END
+ENERGIES
+E_Total                :  -8.4368e+04
+E_Kinetic              :            1.9197e+04
+E_Potential+Special    :           -1.0356e+05
+E_Potential            :           -1.0402e+05
+E_Covalent             :                     1.5468e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              1.3189e+02
+E_Improper             :                              1.4210e+00
+E_Dihedral             :                              2.1370e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0418e+05
+E_Vdw                  :                              1.7611e+04
+E_El (RF)              :                             -1.2179e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            4.5930e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     4.5930e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  1.3189e+02  0.0000e+00
+         E_impropers  1.4210e+00  0.0000e+00
+         E_dihedrals  2.1370e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8238e+01 -2.0431e+02
+             46-7551              1.7863e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2179e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  4.5930e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   2.1568e+02   9.5284e-02   2.1558e+02    570.23      7.64    589.30   1.0052804
+         1   1.8981e+04   9.2579e+03   9.7232e+03    304.21    296.69    311.60   0.9997852
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9197e+04   9.2580e+03   9.9388e+03    305.81    296.57    314.82   0.9998183
+END
+PRESSURE
+	molecular kinetic energy:
+	    2.96481e+03   -1.37356e+02   -1.66013e+01
+	   -1.37356e+02    3.15770e+03    5.69398e+01
+	   -1.66013e+01    5.69398e+01    3.14701e+03
+	
+	virial
+	    3.43555e+03   -2.43284e+02    6.89567e+02
+	    3.16446e+02    1.93838e+03   -4.01811e+01
+	    6.65966e+02   -4.52233e+02    3.14920e+03
+	
+	pressure tensor
+	   -1.21413e+01    2.73209e+00   -1.82135e+01
+	   -1.17045e+01    3.14488e+01    2.50494e+00
+	   -1.76048e+01    1.31326e+01   -5.65351e-02
+	
+	pressure:     6.41700e+00
+	volume:       7.75434e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           4250   58.500000000
+END
+ENERGIES
+E_Total                :  -8.4444e+04
+E_Kinetic              :            1.9002e+04
+E_Potential+Special    :           -1.0345e+05
+E_Potential            :           -1.0372e+05
+E_Covalent             :                     1.0433e+02
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              8.1442e+01
+E_Improper             :                              1.4872e+00
+E_Dihedral             :                              2.1396e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0382e+05
+E_Vdw                  :                              1.7371e+04
+E_El (RF)              :                             -1.2120e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            2.7400e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     2.7400e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  8.1442e+01  0.0000e+00
+         E_impropers  1.4872e+00  0.0000e+00
+         E_dihedrals  2.1396e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8654e+01 -1.9283e+02
+             46-7551              1.7612e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2120e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  2.7400e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   1.5218e+02   9.9216e-02   1.5208e+02    402.34      7.96    415.70   0.9977709
+         1   1.8850e+04   9.1099e+03   9.7401e+03    302.11    291.95    312.14   0.9998755
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9002e+04   9.1100e+03   9.8922e+03    302.71    291.83    313.34   0.9998628
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.13683e+03    8.40874e+01    7.71994e+01
+	    8.40874e+01    3.01482e+03   -8.50572e+00
+	    7.71994e+01   -8.50572e+00    2.96968e+03
+	
+	virial
+	    2.44349e+03    2.64779e+02    4.93204e+01
+	    3.57980e+02    2.62808e+03   -5.35725e+02
+	   -1.08120e+03    1.41211e+02    3.61567e+03
+	
+	pressure tensor
+	    1.78904e+01   -4.66241e+00    7.19369e-01
+	   -7.06731e+00    9.97911e+00    1.36039e+01
+	    2.98904e+01   -3.86317e+00   -1.66687e+01
+	
+	pressure:     3.73361e+00
+	volume:       7.75098e+01
+
+END
+MD:         90% done...
+MD: spent 0:1:58
+MD: ETA   0:0:13
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           4500   59.000000000
+END
+ENERGIES
+E_Total                :  -8.4442e+04
+E_Kinetic              :            1.9136e+04
+E_Potential+Special    :           -1.0358e+05
+E_Potential            :           -1.0379e+05
+E_Covalent             :                     8.7860e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              6.5079e+01
+E_Improper             :                              1.4424e+00
+E_Dihedral             :                              2.1339e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0388e+05
+E_Vdw                  :                              1.7579e+04
+E_El (RF)              :                             -1.2146e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            2.1642e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     2.1642e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  6.5079e+01  0.0000e+00
+         E_impropers  1.4424e+00  0.0000e+00
+         E_dihedrals  2.1339e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8605e+01 -2.1647e+02
+             46-7551              1.7844e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2146e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  2.1642e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   1.6555e+02   9.0600e-02   1.6546e+02    437.69      7.26    452.27   1.0172173
+         1   1.8970e+04   9.2181e+03   9.7523e+03    304.03    295.41    312.53   0.9998176
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9136e+04   9.2182e+03   9.9177e+03    304.84    295.30    314.15   0.9999224
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.02448e+03    1.07619e+01   -6.89940e+01
+	    1.07619e+01    3.14363e+03   -8.36246e+01
+	   -6.89940e+01   -8.36246e+01    3.06269e+03
+	
+	virial
+	    3.33497e+03    1.33065e+03    1.79110e+02
+	    1.24860e+03    2.19823e+03    6.27094e+02
+	    1.40269e+02    2.69428e+02    2.18578e+03
+	
+	pressure tensor
+	   -8.00748e+00   -3.40392e+01   -6.39845e+00
+	   -3.19230e+01    2.43813e+01   -1.83290e+01
+	   -5.39678e+00   -9.10500e+00    2.26150e+01
+	
+	pressure:     1.29963e+01
+	volume:       7.75513e+01
+
+END
+
+--------------------------------------------------------------------------------
+TIMESTEP
+           4750   59.500000000
+END
+ENERGIES
+E_Total                :  -8.4418e+04
+E_Kinetic              :            1.9354e+04
+E_Potential+Special    :           -1.0377e+05
+E_Potential            :           -1.0388e+05
+E_Covalent             :                     5.6587e+01
+E_Bonds                :                              0.0000e+00
+E_Angles               :                              3.3839e+01
+E_Improper             :                              1.4382e+00
+E_Dihedral             :                              2.1310e+01
+E_Crossdihedral        :                              0.0000e+00
+E_Non-bonded           :                    -1.0393e+05
+E_Vdw                  :                              1.6862e+04
+E_El (RF)              :                             -1.2080e+05
+E_El (LS)              :                              0.0000e+00
+E_El (pair)            :                                       0.0000e+00
+E_El (real-space)      :                                                0.0000e+00
+E_El (k-space)         :                                                0.0000e+00
+E_El (A term)          :                                                0.0000e+00
+E_El (lattice sum self):                                       0.0000e+00
+E_El (surface term)    :                                       0.0000e+00
+E_Polarisation self    :                              0.0000e+00
+E_Special              :            1.0488e+02
+E_SASA                 :                     0.0000e+00
+E_SASA Volume          :                     0.0000e+00
+E_Constraints          :                     0.0000e+00
+E_Distanceres          :                     0.0000e+00
+E_Disfieldres          :                     0.0000e+00
+E_Dihrest              :                     0.0000e+00
+E_Posrest              :                     1.0488e+02
+E_Jrest                :                     0.0000e+00
+E_X-ray restraints     :                     0.0000e+00
+E_Local elevation      :                     0.0000e+00
+E_Order-parameter rest.:                     0.0000e+00
+E_RDCrest              :                     0.0000e+00
+E_Symmetry restraints  :                     0.0000e+00
+E_EDS reference        :                     0.0000e+00
+E_Entropy              :                     0.0000e+00
+E_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+             E_bonds  0.0000e+00  0.0000e+00
+            E_angles  3.3839e+01  0.0000e+00
+         E_impropers  1.4382e+00  0.0000e+00
+         E_dihedrals  2.1310e+01  0.0000e+00
+    E_crossdihedrals  0.0000e+00  0.0000e+00
+
+               E_VDW        1-45     46-7551
+                1-45 -4.8553e+01 -2.0154e+02
+             46-7551              1.7113e+04
+
+               E_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2080e+05
+
+         E_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+       E_Self-energy  0.0000e+00  0.0000e+00
+
+           E_SPECIAL        1-45     46-7551
+              E_SASA  0.0000e+00  0.0000e+00
+       E_SASA Volume  0.0000e+00  0.0000e+00
+       E_Constraints  0.0000e+00  0.0000e+00
+       E_Distanceres  0.0000e+00  0.0000e+00
+       E_Disfieldres  0.0000e+00  0.0000e+00
+           E_Dihrest  0.0000e+00  0.0000e+00
+           E_Posrest  1.0488e+02  0.0000e+00
+             E_Jrest  0.0000e+00  0.0000e+00
+           E_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   2.2387e+02   2.1104e-01   2.2366e+02    591.89     16.92    611.37   1.0016450
+         1   1.9130e+04   9.3925e+03   9.7379e+03    306.60    301.00    312.07   0.9997177
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9354e+04   9.3928e+03   9.9616e+03    308.32    300.89    315.54   0.9997293
+END
+PRESSURE
+	molecular kinetic energy:
+	    3.22322e+03    5.95103e+01    7.77967e+00
+	    5.95103e+01    3.05779e+03    6.40841e+01
+	    7.77967e+00    6.40841e+01    3.13135e+03
+	
+	virial
+	    4.00176e+03   -5.77976e+02    4.77193e+01
+	    7.50488e+01    3.32156e+03    3.46642e+02
+	   -6.81259e+02    7.73172e+02    3.97491e+03
+	
+	pressure tensor
+	   -2.00868e+01    1.64475e+01   -1.03047e+00
+	   -4.00902e-01   -6.80542e+00   -7.29016e+00
+	    1.77776e+01   -1.82949e+01   -2.17643e+01
+	
+	pressure:    -1.62188e+01
+	volume:       7.75176e+01
+
+END
+MD:        100% done...
+MD: spent 0:2:11
+MD: ETA   0:0:0
+writing final configuration
+
+============================================================
+FINAL DATA
+============================================================
+
+
+	simulation time  :  60.00000
+	simulation steps :      5000
+
+ENERGY AVERAGES
+<E>_Total                :  -8.4293e+04
+<E>_Kinetic              :            1.9226e+04
+<E>_Potential+Special    :           -1.0352e+05
+<E>_Potential            :           -1.0379e+05
+<E>_Covalent             :                     1.0199e+02
+<E>_Bonds                :                              0.0000e+00
+<E>_Angles               :                              7.9142e+01
+<E>_Improper             :                              1.4494e+00
+<E>_Dihedral             :                              2.1396e+01
+<E>_Crossdihedral        :                              0.0000e+00
+<E>_Non-bonded           :                    -1.0389e+05
+<E>_Vdw                  :                              1.7301e+04
+<E>_El (RF)              :                             -1.2119e+05
+<E>_El (LS)              :                              0.0000e+00
+<E>_El (pair)            :                                       0.0000e+00
+<E>_El (real-space)      :                                                0.0000e+00
+<E>_El (k-space)         :                                                0.0000e+00
+<E>_El (A term)          :                                                0.0000e+00
+<E>_El (lattice sum self):                                       0.0000e+00
+<E>_El (surface term)    :                                       0.0000e+00
+<E>_Polarisation self    :                              0.0000e+00
+<E>_Special              :            2.7107e+02
+<E>_SASA                 :                     0.0000e+00
+<E>_SASA Volume          :                     0.0000e+00
+<E>_Constraints          :                     0.0000e+00
+<E>_Distanceres          :                     0.0000e+00
+<E>_Disfieldres          :                     0.0000e+00
+<E>_Dihrest              :                     0.0000e+00
+<E>_Posrest              :                     2.7107e+02
+<E>_Jrest                :                     0.0000e+00
+<E>_X-ray restraints     :                     0.0000e+00
+<E>_Local elevation      :                     0.0000e+00
+<E>_Order-parameter rest.:                     0.0000e+00
+<E>_RDCrest              :                     0.0000e+00
+<E>_Symmetry restraints  :                     0.0000e+00
+<E>_EDS reference        :                     0.0000e+00
+<E>_Entropy              :                     0.0000e+00
+<E>_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+           <E>_bonds  0.0000e+00  0.0000e+00
+          <E>_angles  7.9142e+01  0.0000e+00
+       <E>_impropers  1.4494e+00  0.0000e+00
+       <E>_dihedrals  2.1396e+01  0.0000e+00
+  <E>_crossdihedrals  0.0000e+00  0.0000e+00
+
+             <E>_VDW        1-45     46-7551
+                1-45 -4.8337e+01 -2.0415e+02
+             46-7551              1.7553e+04
+
+             <E>_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551             -1.2119e+05
+
+       <E>_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+     <E>_Self-energy  0.0000e+00  0.0000e+00
+
+         <E>_SPECIAL        1-45     46-7551
+            <E>_SASA  0.0000e+00  0.0000e+00
+     <E>_SASA Volume  0.0000e+00  0.0000e+00
+     <E>_Constraints  0.0000e+00  0.0000e+00
+     <E>_Distanceres  0.0000e+00  0.0000e+00
+     <E>_Disfieldres  0.0000e+00  0.0000e+00
+         <E>_Dihrest  0.0000e+00  0.0000e+00
+         <E>_Posrest  2.7107e+02  0.0000e+00
+           <E>_Jrest  0.0000e+00  0.0000e+00
+         <E>_RDCrest  0.0000e+00  0.0000e+00
+END
+ENERGY FLUCTUATIONS
+<<E>>_Total                :   3.5689e+02
+<<E>>_Kinetic              :            2.3010e+02
+<<E>>_Potential+Special    :            4.3322e+02
+<<E>>_Potential            :            2.1548e+02
+<<E>>_Covalent             :                     5.9894e+01
+<<E>>_Bonds                :                              0.0000e+00
+<<E>>_Angles               :                              5.9864e+01
+<<E>>_Improper             :                              9.2564e-02
+<<E>>_Dihedral             :                              8.8821e-02
+<<E>>_Crossdihedral        :                              0.0000e+00
+<<E>>_Non-bonded           :                     2.0524e+02
+<<E>>_Vdw                  :                              2.4352e+02
+<<E>>_El (RF)              :                              3.4486e+02
+<<E>>_El (LS)              :                              0.0000e+00
+<<E>>_El (pair)            :                                       0.0000e+00
+<<E>>_El (real-space)      :                                                0.0000e+00
+<<E>>_El (k-space)         :                                                0.0000e+00
+<<E>>_El (A term)          :                                                0.0000e+00
+<<E>>_El (lattice sum self):                                       0.0000e+00
+<<E>>_El (surface term)    :                                       0.0000e+00
+<<E>>_Polarisation self    :                              0.0000e+00
+<<E>>_Special              :            2.1775e+02
+<<E>>_SASA                 :                     0.0000e+00
+<<E>>_SASA Volume          :                     0.0000e+00
+<<E>>_Constraints          :                     0.0000e+00
+<<E>>_Distanceres          :                     0.0000e+00
+<<E>>_Disfieldres          :                     0.0000e+00
+<<E>>_Dihrest              :                     0.0000e+00
+<<E>>_Posrest              :                     2.1775e+02
+<<E>>_Jrest                :                     0.0000e+00
+<<E>>_X-ray restraints     :                     0.0000e+00
+<<E>>_Local elevation      :                     0.0000e+00
+<<E>>_Order-parameter rest.:                     0.0000e+00
+<<E>>_RDCrest              :                     0.0000e+00
+<<E>>_Symmetry restraints  :                     0.0000e+00
+<<E>>_EDS reference        :                     0.0000e+00
+<<E>>_Entropy              :                     0.0000e+00
+<<E>>_QM                   :                     0.0000e+00
+
+                 COV        1-45     46-7551
+         <<E>>_bonds  0.0000e+00  0.0000e+00
+        <<E>>_angles  5.9864e+01  0.0000e+00
+     <<E>>_impropers  9.2564e-02  0.0000e+00
+     <<E>>_dihedrals  8.8821e-02  0.0000e+00
+<<E>>_crossdihedrals  0.0000e+00  0.0000e+00
+
+           <<E>>_VDW        1-45     46-7551
+                1-45  4.0793e-01  1.0285e+01
+             46-7551              2.4413e+02
+
+           <<E>>_CRF        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              3.4486e+02
+
+     <<E>>_LS (real)        1-45     46-7551
+                1-45  0.0000e+00  0.0000e+00
+             46-7551              0.0000e+00
+
+   <<E>>_Self-energy  0.0000e+00  0.0000e+00
+
+       <<E>>_SPECIAL        1-45     46-7551
+          <<E>>_SASA  0.0000e+00  0.0000e+00
+   <<E>>_SASA Volume  0.0000e+00  0.0000e+00
+   <<E>>_Constraints  0.0000e+00  0.0000e+00
+   <<E>>_Distanceres  0.0000e+00  0.0000e+00
+   <<E>>_Disfieldres  0.0000e+00  0.0000e+00
+       <<E>>_Dihrest  0.0000e+00  0.0000e+00
+       <<E>>_Posrest  2.1775e+02  0.0000e+00
+         <<E>>_Jrest  0.0000e+00  0.0000e+00
+       <<E>>_RDCrest  0.0000e+00  0.0000e+00
+END
+TEMPERATURE AVERAGES
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   3.4546e+02   1.2794e-01   3.4534e+02    913.37     10.26    943.97   1.0537387
+         1   1.8881e+04   9.1869e+03   9.6940e+03    302.60    294.41    310.67   0.9996936
+    ---------------------------------------------------------------------------------------
+     T_avg   1.9226e+04   9.1870e+03   1.0039e+04    306.28    294.30    318.01   1.0000192
+END
+TEMPERATURE FLUCTUATIONS
+      BATH         EKIN  EKIN-MOL-TR  EKIN-MOL-IR         T  T-MOL-TR  T-MOL-IR       SCALE
+         0   1.7392e+02   1.2190e-01   1.7383e+02    459.82      9.77    475.16   1.0537387
+         1   1.5710e+02   1.2788e+02   1.3068e+02      2.52      4.10      4.19   0.9996936
+    ---------------------------------------------------------------------------------------
+     T_avg   3.3101e+02   1.2800e+02   3.0451e+02      5.27      4.10      9.65   1.0000192
+END
+PRESSURE AVERAGE
+	    6.82032e-01    2.06012e+00    1.98287e+00
+	    2.01227e+00   -5.60821e-01   -1.04630e+00
+	    2.11737e+00   -2.57117e-01   -2.52249e+00
+END
+PRESSURE FLUCTUATION
+	    1.74989e+01    1.47547e+01    1.42962e+01
+	    1.51600e+01    1.75075e+01    1.34019e+01
+	    1.39413e+01    1.36971e+01    1.67703e+01
+END
+
+MESSAGES FROM SIMULATION
+
+
+TIMING
+          RemoveCOMMotion                     0.000331
+          Lattice_Shift_Tracker               0.211073
+          Angle                               0.019024
+          ImproperDihedral                    0.019757
+          Dihedral                            0.051007
+          Crossdihedral                       0.001931
+          NonBonded                         110.077828
+             - 1,4 interaction                0.017479      0.02%
+             - LJ exceptions                  0.003734      0.00%
+             - RF excluded interaction        0.169326      0.15%
+             - longrange                     42.264077     38.39%
+             - longrange addition             0.091528      0.08%
+             - longrange solvent-solvent     41.800276     37.97%
+             - pairlist                      16.397407     14.90%
+             - pairlist prepare               0.654445      0.59%
+             - set data summation             0.235101      0.21%
+             - shortrange                    47.739317     43.37%
+             - solvent-solvent               47.266219     42.94%
+          MolecularVirial                     1.299372
+          Leap_Frog_Velocity                  0.144642
+          BerendsenThermostat                 0.097305
+          Leap_Frog_Position                  0.114594
+          Shake                              17.717372
+             - solute                         0.041391      0.23%
+             - solvent                       16.789173     94.76%
+          TemperatureCalculation              0.532856
+          PressureCalculation                 0.001618
+          BerendsenBarostat                   0.068929
+END
+Overall time used:	131.944014
+(initialisation took 0.513268)
+
+Thu Sep 23 16:45:23 2021
+
+
+
+MD++ finished successfully
+
+Linux don-elias 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux

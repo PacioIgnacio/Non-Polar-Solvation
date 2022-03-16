@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# first we set some variables
+NAME=`whoami`
+PROGRAM=/opt/md++1.41/bin/md
+SIMULDIR=/home/imunoz/NPT.Lambda/07ALA/helix/eq
+
+# create temporary directory
+WORKDIR=${SIMULDIR}
+mkdir -p ${WORKDIR}
+cd       ${WORKDIR}
+
+# set the input files
+TOPO=${SIMULDIR}/../../topo/7ALA_noC_54a7.top
+IUNIT=${SIMULDIR}/eq_peptide_3.imd
+INPUTCRD=${SIMULDIR}/eq_peptide_2.cnf
+REFPOS=${SIMULDIR}/../box/sim_box_peptide.rpr
+POSRESSPEC=${SIMULDIR}/../box/sim_box_peptide.por
+
+#set the output files
+OUNIT=eq_peptide_3.omd
+OUTPUTCRD=eq_peptide_3.cnf
+OUTPUTTRX=eq_peptide_3.trc
+OUTPUTTRE=eq_peptide_3.tre
+
+
+MDOK=1
+
+${PROGRAM} \
+	@topo        ${TOPO} \
+	@conf        ${INPUTCRD} \
+	@input       ${IUNIT} \
+	@posresspec  ${POSRESSPEC} \
+	@refpos      ${REFPOS} \
+	@fin         ${OUTPUTCRD} \
+	@trc         ${OUTPUTTRX} \
+	@tre         ${OUTPUTTRE}\
+	>            ${OUNIT}
+grep "finished successfully" ${OUNIT} > /dev/null || MDOK=0
+
+uname -a >> ${OUNIT}
+
+# compress some files
+gzip ${OUTPUTTRX}
+gzip ${OUTPUTTRE}
+
+# copy the files back
+OK=1
+cp ${OUNIT}               ${SIMULDIR} || OK=0
+cp ${OUTPUTCRD}           ${SIMULDIR} || OK=0
+cp ${OUTPUTTRX}.gz        ${SIMULDIR} || OK=0
+cp ${OUTPUTTRE}.gz        ${SIMULDIR} || OK=0
+
+# clean up after successful run
+if `test ${OK} -eq 0`; then
+  uname -a > mess;
+  echo 'cp failed for eq_peptide, run 3' >> mess;
+  Mail -s "ERROR" ${NAME} < mess;
+  cd ${SIMULDIR};
+else
+  cd ${SIMULDIR};
+  rm ${WORKDIR}/*;
+  rmdir ${WORKDIR};
+fi
+
+# stop if MD was not succesfull
+if `test ${MDOK} -eq 0`; then
+  exit
+fi
+
+# perform last command (usually submit next job)
+cd ${SIMULDIR}
+./eq_peptide_4.run 
