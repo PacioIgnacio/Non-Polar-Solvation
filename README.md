@@ -13,7 +13,7 @@ meaning modeling the solute as an uncharged capacitor.
 
 - **GROMOS** is an acronym of the **GROningen MOlecular Simulation** computer program. It’s a software package used for computer simulations of molecular 
 systems like proteins, inorganic and organic chemical compounds, DNA, etc, writen in **C++**, available in this [link](http://www.gromos.net/). 
-- All the motivation, theorical background, and methods are carefully explained in my thesis report that you can find [here](lalalal). 
+- All the motivation, theorical background, and methods are carefully explained the project report that you can find [here](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/Info). 
 
 ## Workflow ##  
 
@@ -33,6 +33,8 @@ This repository is organized as follows:
 - The third level is where all the steps described in the **Workflow** are organized.  
 
 As you can see, GROMOS works with *text files* as an imput/output to its functions. This is why you can find python code to automatize the procces of edit 
-and create each one of those files. They are also organized by step in the directory [/pdata](lalala) and follows the same structure. 
+and create each one of those files. They are also organized by step in the directory [/pdata](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/pdata) and follows the same structure. 
 
-The results of this research are available in the [/Results](lala) section. Feel free to use! 
+The results of this research are available in the [/Results](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/Results) section. 
+
+Feel free to use! 
