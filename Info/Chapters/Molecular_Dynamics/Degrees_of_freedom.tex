@@ -1,0 +1,31 @@
+\subsection{Degrees of freedom}\label{subsec:degrees}
+
+This criteria is oriented to determine which molecular description are explicitly considered in the model and is strictly related to the resolution of the system of interest. The level of modeling chosen to describe a particular bio-molecular process depends on the type of process. This will determine the theory employed, ranging from quantum to classical mechanics. In this particular case of study, we are interest on evaluate the interaction between the solvent and the solute which is driven by weak, non-bonded inter-atomic interactions. Therefore, these processes are most promisingly modeled at the atomic or molecular level. In Table \ref{tab:Degree} are organized by level of detail, the methods for different molecular descriptions. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{L|L|>{\centering\arraybackslash}p{4.5cm}|p{3cm}}
+    \toprule
+        Methods & Degrees of freedom & Properties, processes & Time scale \\
+    \midrule
+        quantum dynamics & atoms, nuclei, electrons & excited states, relaxation, reaction dynamics & picoseconds \\
+        
+        quantum mechanics & atoms, nuclei, electrons & ground and excited states, reaction mechanisms & no time scale \\
+        
+        classical statistical mechanics (MD, MC, force fields) & atoms, solvent & ensembles, averages, system properties, folding & nanoseconds \\
+        
+        statistical methods (database analysis) & groups of atoms, amino acid residues, bases & structural homology and similarity & no time scale \\
+        
+        continuum methods (hydrodynamics and electrostatics) & electrical continuum, velocity continuum etc. & rheological properties & supramolecular \\
+        
+        kinetic equations & populations of species & population dynamics,  signal transduction & macroscopic\\ 
+    \bottomrule
+        
+    \end{tabular}
+    \caption{Examples of levels of modeling in computational biochemistry and molecular biology. Table from from Van Gunsteren et al. \cite{van2006biomolecular}}
+    \label{tab:Degree}
+\end{table}
+
+As it is shown in Table \ref{tab:Degree}, the models were categorized by order of approximation, ranging from quantum descriptions in the form of quantum mechanics (QM) based models which take into account the interaction between atom's orbitals as is described in Section \ref{subsec:molecular_structure} with multiple degrees of freedom, to approximations for heavy and slow particles on a larger scale were the processes involved are very well described by classical mechanics. The cost of the energy and force evaluation is primarily determined by two factors: the degrees of freedom that are considered and the functional form of the Hamiltonian (Section \ref{subsec:FF}). One can move from a quantum-mechanical description of the system where the electronic degrees of freedom are modeled explicitly, to a classical description where one atom is treated as one particle, to a coarse-grained description where groups of atoms are merged into one particle. A reduction in the number of degrees of freedom can, however, also be obtained by reducing the system size or treating parts of the system (e.g., the solvent) as a continuum \cite{christ2010basic}.
+
+The choice of which degrees of freedom are modeled explicitly depends on the system of interest and the property one wishes to estimate. If a certain degree of freedom is believed to have no effect on the property of interest, it can be omitted and the computing time gained invested in sampling the relevant degrees of freedom more extensively.

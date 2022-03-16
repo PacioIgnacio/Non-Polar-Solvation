@@ -1,0 +1,24 @@
+\subsection{Configurations of Atoms}
+The search of configuration space can be expanded by applying the molecular dynamics (MD) computer simulation technique. Applying MD the classical Newtonian equations of motion of all atoms in the system are solved. These are for a set of N atoms with masses $N_i$ and Cartesian position vectors $r_i (i=1,2,...,N)$. The expression is given by:
+\begin{equation}
+    \frac{d^{2}r_i(t)}{dt^2}=m_{i}^{-1} F_i(r_1(t),r_2(t),...,r_N(t))
+    \label{eq:Newton}
+\end{equation}
+where the force applied to each atom of the system is obtain by:
+
+These equations can be numerically integrated using small (\~$10^{15}s$) time-steps $\Delta t$ producing a trajectory (atomic positions as a function of time t) of the system \cite{van1988role}.
+
+Regarding the method to generate configurations, the formulation of the energy of the system (Equation \ref{eq:hamiltonian}) which is determined by the molecular system by the force-field, gives the mathematical description of the potential energy described in Equation \ref{eq:Potential}. 
+\begin{equation}
+    \frac{\partial H}{\partial p_i}=\frac{dq_i}{dt}
+    \label{eq:dHdp}
+\end{equation}
+\begin{equation}
+    \frac{\partial H}{\partial q_i}=-\frac{dp_i}{dt}
+    \label{dHdq}
+\end{equation}
+These two derivation from the Hamiltonian gives the velocity (Equation \ref{eq:dHdp}) and as the kinetic energy of the system is not explicitly dependent on positions, Equation \ref{dHdq} is an alternative way to express Equation \ref{eq:Potential}.
+
+These equations describe the physical basis for molecular dynamics (MD) simulations, which integrate these equations as a function of time, for each degree of freedom (for N particles there are 3 position and 3 momentum coordinates, for a total of 6N degrees of freedom). A common alternative is the Monte Carlo (MC) method which is based on random non physical moves to sample an energy distribution. However, MC simulations can be problematic when an explicit solvent is used, as when solvent molecules are simulated along with the molecules of interest problems arise as the solvent restricts movement within traditional MC methods leading to poor sampling when compared to MD methods \cite{wang2008calculation}.
+
+%MD algorithms 

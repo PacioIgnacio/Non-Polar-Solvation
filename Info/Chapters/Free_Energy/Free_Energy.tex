@@ -1,0 +1,25 @@
+\section{Free Energy}\label{sec:Free_energy}
+\vspace{3cm}
+\par
+
+
+The free energy is a highly desirable quantity to compute. It is in essence the factor that determines how a process will proceed and the probability that a system will adopt a given state. The ability to calculate free energies from molecular simulations not only allows one to understand the underlying processes on an atomic level but also to probe states of a system not accessible experimentally. In particular, if precise and accurate estimates of the free energy of a system could be obtained directly from numerical simulations, the need to measure thermodynamic properties of a system, such as ligand-binding constants \cite{free_energy}, by experiment would be greatly reduced. This is why, for example, free energy calculations have attracted much interest in areas such as rational drug design and material science. 
+Free energy calculations can be classiﬁed into two categories. The calculation of conformational free energies aims at evaluating the relative free energies of relevant conformational states of a given molecular system. The calculation of alchemical free energies on the other hand aims at evaluating the relative free energies of diﬀerent molecules, which is the main objective of this work. 
+
+Free energy is an extensive property, meaning that its magnitude depends on the amount of a substance in a given thermodynamic state, and it's expressed in two forms depending on the conditions that it is determined: The relative (Helmholtz) free energy $F$ is obtained under isochoric-isothermic conditions (NVT), whereas the relative (Gibbs) free enthalpy $G$ is obtained under isobaric-isothermic conditions (NPT). Both expressions are given by: 
+\begin{equation}
+    F=U-TS
+    \label{eq:Helmholtz}
+\end{equation}
+\begin{equation}
+    \begin{split}
+    G&=U+PV-TS\\ 
+     G&=H-TS
+    \end{split}
+    \label{eq:Gibbs}
+\end{equation}
+
+From an MD trajectory, described in Section \ref{sec:MD}, the statistical equilibrium averages can be obtained for any desired property of the molecular system for which a value can be computed at each point of the trajectory. Examples of such properties are the potential or kinetic energy of relevant parts of the system, structural properties and fluctuations, electric fields, diffusion constants, etc. A number of thermodynamic properties can be derived from such averages. However, two important thermodynamic quantities, the entropy and the (Gibbs or Helmholtz) free energy, generally cannot be derived from a statistical average. They are global properties that depend on the extent of phase (or configuration) space accessible to the molecular system \cite{van1988role}. Fortunately, with statistical mechanics methods one can evaluate the \textit{relative} free energy differences.
+
+
+\input{Chapters/Free_Energy/Thermodynamic_Integration}

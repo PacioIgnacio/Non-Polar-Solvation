@@ -1,0 +1,131 @@
+%Plantilla para escritura de memoria/tesis
+%Universidad Técnica Federico Santa María, Santiago, ||fChile
+%Departamento de Ingeniería Mecánica
+%Ignacio Muñoz Quiroz
+%Santiago, 11/06/2021
+
+%--- DOCUMENT SETUP
+
+\documentclass[12pt, oneside]{article} %Document definition class
+\usepackage[utf8]{inputenc} %Indicates we are using ISO-8859-1(latin1)  o utf8
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\graphicspath{{Figures/}} % Location of the graphics files (set up for graphics to be in PDF format)
+\usepackage[a4papper,left=3.0cm,right=2.5cm,top=3.7cm,bottom=2.5cm,includefoot]{geometry}
+\usepackage{sectsty} %Resize section and subsection font size  
+\sectionfont{\fontsize{25}{20}\selectfont}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\usepackage{setspace}
+
+
+
+%--- LOAD PACKAGES
+\usepackage{amsmath} % Math comands
+\usepackage{amssymb} % Math symbols 
+\usepackage{gensymb} % Physics symbols
+%\usepackage{subfigure} % subfigures
+\usepackage{caption}
+\usepackage{subcaption} % subcaptions
+%\usepackage{float} % complemento para figura
+\usepackage{import} % Divide main.tex into separated file
+%\usepackage{natbib} % Bibliography
+%\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
+%\usepackage{hypcap} 
+%\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{multirow}% Multirows for tables
+
+
+\usepackage{array}% fix tab options on Tables
+\newcolumntype{L}{>{\centering\arraybackslash}m{3.5cm}}
+
+%--- 
+
+%--- FRONT PAGE
+
+\title{
+    \begin{center}
+    \vspace{-3.5cm}
+    {\Large\textbf{UNIVERSIDAD TÉCNICA FEDERICO SANTA MARÍA}}\\
+    \vspace{0.5cm}
+    {\large DEPARTAMENTO DE INGENIERÍA MECÁNICA}\\
+    {\large SANTIAGO, CHILE}\\
+    \vspace{0.5cm}
+    
+    \includegraphics[scale=0.55]{Logo_UTFSM.png}
+
+    \vspace{0.25cm}
+
+    {\Large ESTUDIO DEL COMPORTAMIENTO CINÉTICO Y TERMODINÁMICO DE LLENADO DE NANOTUBOS ESTRECHOS DE CARBONO SUJETOS A CAMPOS ELÉCTRICOS, A TRAVÉS DE SIMULACIONES DE DINÁMICA MOLECULAR CLÁSICA}
+    
+    \vspace{1cm}
+    
+    {\large \textbf{IGNACIO TOMÁS MUÑOZ QUIROZ}}\\
+    \vspace{0.35cm}
+    {\normalsize MEMORIA PARA OPTAR AL TÍTULO DE INGENIERO CIVIL MECÁNICO}\\
+    
+    \vspace{0.5cm}
+    
+    {\normalsize Profesor Guía: PhD. Christopher Cooper}\\
+    {\normalsize Profesor  Coreferente: PhD. Harvey A. Zambrano}\\
+    {\normalsize Profesor  Coreferente: PhD. José Antonio Gárate}\\
+    \vspace{0.3cm}
+    {\normalsize \textbf{MES - AÑO}}
+    \end{center}
+}
+\author{} % Left blank
+\date{} % Left blank
+%--- 
+
+%--- PAGE SETUP
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\rfoot{\thepage}
+\rhead{\leftmark}
+%\renewcommand{\headrulewidth}{0pt}
+
+
+%---
+
+%--- DOCUMENT CORE
+
+\begin{document}
+
+\pagestyle{empty}
+\pagenumbering{roman} % Add roman numbers for first pages
+\setcounter{page}{0}
+\maketitle %Add title page 
+
+\include{Chapters/Abstract}
+
+\newpage
+
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures
+\newpage
+\include{Acronymus}
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+\include{Chapters/Abstract/Abstract}
+\include{Chapters/Introduction/Introduction}
+\include{Chapters/Molecular_Dynamics/Molecular_dynamics.txt}
+\include{Chapters/Implicit_Solvent/Implicit_Solvent}
+\include{Chapters/Free_Energy/Free_Energy}
+\include{Chapters/Methods/Methods}
+\include{Chapters/Results/Results_and_Discussion}
+
+\bibliographystyle{ieeetr}
+\bibliography{References.bib}
+
+\include{Chapters/Appendices/Appendices}
+
+\end{document}
