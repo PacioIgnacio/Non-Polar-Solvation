@@ -6,7 +6,7 @@ This repository is the suplementary material for the work titled:
 
 In this work, Molecular Dynamics technique (explicit model) was perform using GROMOS simulation software to calculate the van der Waals free energy of 
 cavity-formation of 20 alanine peptides divided in extended and helix configurations, ranging from 1 to 10, and compare the numerical results with two 
-impliciti solvent models models: the standard model based on the molecular surface of the solute (SASA), and a new methodology which has a closer physical 
+impliciti solvent models: the standard model based on the molecular surface of the solute (SASA), and a new methodology which has a closer physical 
 meaning modeling the solute as an uncharged capacitor.
 
 ### Notes: ### 
