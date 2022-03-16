@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# first we set some variables
+NAME=`whoami`
+PROGRAM=/opt/md++1.41/bin/md
+SIMULDIR=/home/imunoz/NPT.Lambda/09ALA/extended/TI
+
+# create temporary directory
+WORKDIR=${SIMULDIR}/TI_9ALA_dummy_7254
+mkdir -p ${WORKDIR}
+cd       ${WORKDIR}
+
+# set the input files
+TOPO=${SIMULDIR}/../../topo/9ALA_noC_54a7.top
+IUNIT=${SIMULDIR}/L_0.725/TI_9ALA_dummy_7254.imd
+INPUTCRD=${SIMULDIR}/L_0.725/TI_9ALA_dummy_7253.cnf
+REFPOS=${SIMULDIR}/../md/md_peptide_10.rpr
+POSRESSPEC=${SIMULDIR}/../md/md_peptide_10.por
+PTTOPO=${SIMULDIR}/../../../ptps/9ALA_dummy.ptp
+
+#set the output files
+OUNIT=TI_9ALA_dummy_7254.omd
+OUTPUTCRD=TI_9ALA_dummy_7254.cnf
+OUTPUTTRE=TI_9ALA_dummy_7254.tre
+OUTPUTTRG=TI_9ALA_dummy_7254.trg
+
+
+MDOK=1
+
+${PROGRAM} \
+	@topo        ${TOPO} \
+	@conf        ${INPUTCRD} \
+	@input       ${IUNIT} \
+	@pttopo      ${PTTOPO} \
+	@posresspec  ${POSRESSPEC} \
+	@refpos      ${REFPOS} \
+	@fin         ${OUTPUTCRD} \
+	@tre         ${OUTPUTTRE} \
+	@trg         ${OUTPUTTRG}\
+	>            ${OUNIT}
+grep "finished successfully" ${OUNIT} > /dev/null || MDOK=0
+
+uname -a >> ${OUNIT}
+
+# compress some files
+gzip ${OUTPUTTRE}
+gzip ${OUTPUTTRG}
+
+# copy the files back
+OK=1
+cp ${OUNIT}               ${SIMULDIR}/L_0.725 || OK=0
+cp ${OUTPUTCRD}           ${SIMULDIR}/L_0.725 || OK=0
+cp ${OUTPUTTRE}.gz        ${SIMULDIR}/L_0.725 || OK=0
+cp ${OUTPUTTRG}.gz        ${SIMULDIR}/L_0.725 || OK=0
+
+# clean up after successful run
+if `test ${OK} -eq 0`; then
+  uname -a > mess;
+  echo 'cp failed for TI_9ALA_dummy, run 7254' >> mess;
+  Mail -s "ERROR" ${NAME} < mess;
+  cd ${SIMULDIR};
+else
+  cd ${SIMULDIR};
+  rm ${WORKDIR}/*;
+  rmdir ${WORKDIR};
+fi
+
+# stop if MD was not succesfull
+if `test ${MDOK} -eq 0`; then
+  exit
+fi
+
+# perform last command (usually submit next job)
+cd ${SIMULDIR}/L_0.725
+./TI_9ALA_dummy_7255.run 
