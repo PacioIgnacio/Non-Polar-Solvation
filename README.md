@@ -35,6 +35,6 @@ This repository is organized as follows:
 As you can see, GROMOS works with *text files* as an imput/output to its functions. This is why you can find python code to automatize the procces of edit 
 and create each one of those files. They are also organized by step in the directory [/pdata](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/pdata) and follows the same structure. 
 
-The results of the molecular simulations are available in the [/Results](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/Results) section and any code that was develop for the trajectory analisys is also available in the [/TI_results](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/TI_Results) directory. 
+The results of the molecular simulations are available in the [/Results](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/Results) section and any code developed for the trajectory analisys and the Thermodynamics Integration is also available in the [/TI_results](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/TI_Results) directory. 
 
 Feel free to use! 
