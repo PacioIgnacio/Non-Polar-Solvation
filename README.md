@@ -9,11 +9,12 @@ cavity-formation of 20 alanine peptides divided in extended and helix configurat
 impliciti solvent models: the standard model based on the molecular surface of the solute (SASA), and a new methodology which has a closer physical 
 meaning modeling the solute as an uncharged capacitor.
 
+
 ### Notes: ### 
 
 - **GROMOS** is an acronym of the **GROningen MOlecular Simulation** computer program. It’s a software package used for computer simulations of molecular 
 systems like proteins, inorganic and organic chemical compounds, DNA, etc, writen in **C++**, available in this [link](http://www.gromos.net/). 
-- All the motivation, theorical background, and methods are carefully explained the project report that you can find [here](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/Info). 
+- All the motivation, theorical background, and methods are carefully explained in the project report. You can find the LaTeX file [here](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/Info).
 
 ## Workflow ##  
 
