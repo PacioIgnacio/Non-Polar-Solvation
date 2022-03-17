@@ -29,12 +29,12 @@ I strongly recommend to follow this structure when you work with GROMOS. It's a 
 
 This repository is organized as follows: 
 - Each diractory is enumerated with the number of *Alanine* residues of this particular system. (e.g. /5ALA = *Penta-Alanine*)
-- The second level is corresponding on the configuration of the system (Helix or Extended)
+- The second level is corresponding on the configuration of the system (/Helix or /Extended)
 - The third level is where all the steps described in the **Workflow** are organized.  
 
 As you can see, GROMOS works with *text files* as an imput/output to its functions. This is why you can find python code to automatize the procces of edit 
 and create each one of those files. They are also organized by step in the directory [/pdata](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/pdata) and follows the same structure. 
 
-The results of this research are available in the [/Results](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/Results) section. 
+The results of the molecular simulations are available in the [/Results](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/Results) section and any code that was develop for the trajectory analisys is also available in the [/TI_results](https://github.com/PacioIgnacio/Non-Polar-Solvation/tree/master/TI_Results) directory. 
 
 Feel free to use! 
